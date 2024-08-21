@@ -10,3 +10,10 @@ a{
 .active{
   color: red;
 }
+body{
+  /* background: linear-gradient(rgb(222, 239, 255), rgb(161, 174, 197)); */
+  height: max-content;
+  background-repeat: no-repeat;
+  background-size: cover; /* или background-size: 100% 100%; */
+  background-attachment: fixed;
+}

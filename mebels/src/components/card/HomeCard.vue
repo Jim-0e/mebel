@@ -50,11 +50,11 @@ export default{
 
 <style>
 .product-card {
-  width: 300px;
+  width: 200px;
   height: 300px;
   text-align: center;
   /* border: 1px solid #000000; */
-  box-shadow: 1px 2px 3px rgb(255, 255, 255);
+  /* box-shadow: 1px 2px 3px rgb(255, 255, 255); */
 
 }
 

@@ -1,7 +1,7 @@
 <template>
   <div>
     <header-comp></header-comp>
-
+  
     <div class="container">
       <div class="container__left">
           <left-block>
@@ -42,22 +42,23 @@ export default{
 </script>
 
 <style lang="scss">
+
   .container{
     // width: 100%;
-    margin: 0 5rem;
-
-    display: flex;
+    padding: 3rem 5rem;
+    // background-color: rgb(233, 233, 233);
+    // display: flex;
   
     &__left{
-      width: 20%;
+      width: 300px;
       height: max-content;
       background-color: rgb(175, 175, 175);
     }
     &__rigth{
       width: 100%;
       background-color: rgb(255, 255, 255);
-      height: 70vh;
-      
+      // height: 70vh;
+
     }
   
   }

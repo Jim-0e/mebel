@@ -1,7 +1,10 @@
 <template>
     <div>
-        <h1>Шкафы</h1>
-   
+        <!-- <h1>Шкафы</h1> -->
+        <right-block-vue
+         title="Шкафы"
+         >
+        </right-block-vue>
         <div class="wrapper">
             <main-card v-for="(card, i) in getCabinets" :key="i"
                 :name="card.name"
@@ -17,12 +20,13 @@
 </template>
 
 <script>
-import MebelStore from '../../store/store'
-import MainCard from '../card/MainCard.vue'
-
+import MebelStore from '../store/store'
+import RightBlockVue from '../components/blocks/RightBlock.vue'
+import MainCard from '../components/card/MainCard.vue'
 
 export default{
-    components: {MainCard},
+    components: {MainCard,RightBlockVue},
+    provide: ['cabinets'],
     data(){
         return{
             store: MebelStore(),
@@ -52,6 +56,7 @@ export default{
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  margin: 1rem;
 //   background-color: aqua;
 }
 </style>

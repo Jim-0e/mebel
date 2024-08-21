@@ -1,7 +1,8 @@
 <template>
     <div>
-        <h1 class="title">Категории</h1>
-
+        <right-block-vue 
+        title="Категории">
+        </right-block-vue>
         <div class="wrapper_categories">
 
             
@@ -20,12 +21,12 @@
 </template>
 
 <script>
-import MebelStore from '../../store/store';
-import HomeCard from '../card/HomeCard.vue';
-
+import MebelStore from '../store/store';
+import RightBlockVue from '../components/blocks/RightBlock.vue';
+import HomeCard from '../components/card/HomeCard.vue';
 
 export default{
-    components: {HomeCard},
+    components: {HomeCard, RightBlockVue},
     data(){
         return{
             store: MebelStore(),
@@ -50,19 +51,17 @@ export default{
 </script>
 
 <style scoped>
-.title{
-    color: rgb(255, 255, 255);
-    text-align: center;
-    background-color: rgb(11, 11, 11);
-}
+
 .wrapper_categories{
-    width: 100%;
-    display: flex;
+    max-width: 1500px;
+    display: grid;
     flex-wrap: wrap;
-    /* grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); */
-    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 3px;
     align-items: center;
-    padding: 2rem 0 2rem 2rem;
+    margin: 0 auto;
+    padding: 0rem 4rem;
+    /* padding: 2rem 0 2rem 2rem; */
 }
 img{
     width: 100px;

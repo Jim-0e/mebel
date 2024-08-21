@@ -56,7 +56,7 @@ export default{
     },
     methods:{
         setTovarId(id){
-            this.store.setTovarId('cabinets', id)
+            this.store.setFindTovar('cabinets', id)
         }
     }
 }

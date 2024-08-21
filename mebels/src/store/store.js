@@ -1,33 +1,29 @@
 import { defineStore } from 'pinia'
 import axios from 'axios'
+import apiResponce from '../api/api'
+
 
 const MebelStore = defineStore('mebel',{
     state: ()=>({
         cabinets: [],
         categories: [],
         tovar: [],
+        totalItemsCabinets: 1
     }),
     getters: {
     },
     actions:{
-        setCabinets(page='1'){
-            axios.get('http://127.0.0.1:8000/api/cabinets/',`?page${page}`)
-            .then(response => {
-                console.log(response.data)
-                const data = response.data
-                this.cabinets = data['results']
-            })
+        async setCabinets(page,){
+            const {data, totalItems} = await apiResponce.getCabinets(page)        
+            this.cabinets = data
+            this.totalItemsCabinets = totalItems
         },
-        setCategories(page='1'){
-            axios.get('http://127.0.0.1:8000/api/categories/',`?page${page}`)
-            .then(response => {
-                console.log(response.data)
-                const data = response.data
-                this.categories = data['results']
-                
-            })
+        async setCategories(page='1'){
+            const {data, totalItems} = await apiResponce.getCategories(page)        
+            this.cabinets = data
+            this.totalItemsCabinets = totalItems
         },
-        setTovarId(api_name, id){
+        setFindTovar(api_name, id){
             axios.get(`http://127.0.0.1:8000/api/${api_name}/${id}`)
             .then(response =>{
                 console.log(response.data)

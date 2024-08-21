@@ -13,8 +13,14 @@
             <div class="product-info">
                 <p class="product-name">{{ name }}</p>
                 <!-- <div class="product-description">{{ description.slice(0,40) }}...</div> -->
-                <div class="product-price">{{ price }} Руб.</div>
-                <button class="product-add-to-cart">В корзину</button>
+                <p>{{ description.slice(0, 20) }}...</p>
+                <div class="product-bui">
+                  <div class="product-price">{{ price }} Руб.</div>
+                  <button class="product-add-to-cart">
+                    <img width="50" src="/icons/korzina.png" alt="">
+                  </button>            
+                </div>
+                
             </div>
             </div>
      
@@ -32,8 +38,10 @@ export default{
 .product-card {
   width: 300px;
   height: 400px;
-  border: 1px solid rgb(234, 234, 234);
-
+  padding: 20px;
+  background-color: #332941;
+  color: white;
+  border-radius: 1px;
 }
 
 .product-image {
@@ -41,7 +49,12 @@ export default{
   height: 200px;
   overflow: hidden;
 }
+.product-bui{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 
+}
 .product-image img {
   width: 100%;
   height: 100%;
@@ -56,7 +69,7 @@ export default{
 .product-name {
   font-size: 17px;
   font-weight: none !important;
-  color:rgb(100, 100, 100);
+  color:rgb(255, 255, 255);
 }
 
 .product-description {
@@ -65,23 +78,11 @@ export default{
 }
 
 .product-price {
-  font-size: 19px;
-  color: #343434;
-  font-weight: bolder;
-  margin-top: 2rem;
-  font-weight: 200;
-  letter-spacing: 0px;
+  color: white
 }
 
 .product-add-to-cart {
-  width: 130px;
-  height: 40px;
-  padding: 4px 7px;
-  background-color: #e6e6e6;
-  color: #000000;
-  border: none;
-  border-radius: 15px;
-  cursor: pointer;
+  width: max-content;
 }
 
 .product-add-to-cart:hover {
